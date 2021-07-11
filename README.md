@@ -3,7 +3,7 @@
 
 Stuff is still moving around and being updated intermittently. Once complete, this website will be formally announced on social media.
 
-*Last updated 11 July 2021*
+*Last updated: 11 July 2021*
 
 # Intro
 
