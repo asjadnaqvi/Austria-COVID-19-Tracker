@@ -55,10 +55,11 @@ This second phase was more experimental with testing out new visualizations, col
 
 By December 2020, information was fairly standardized, and the biggest concern was vaccine rollouts and the new virus variants. Austria, like other countries was eager to come put of the lockdown, especially after the massive losses of not having a ski season.
 
+# Data scripts
 
 
-# Graph types
-Here are some of the other graph types that were posted over the course of the pandemic:
+# Archieve of tweets
+
 
 ## Just plain lines and maps
 
@@ -90,7 +91,9 @@ Here are some of the other graph types that were posted over the course of the p
 
 ## Excess deaths
 
+
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some thoughts on attributing excess weekly deaths to <a href="https://twitter.com/hashtag/COVID19?src=hash&amp;ref_src=twsrc%5Etfw">#COVID19</a>. Here is the data for <a href="https://twitter.com/hashtag/Austria?src=hash&amp;ref_src=twsrc%5Etfw">#Austria</a> published on Eurostat. It has been reduced to compare 65+ and 0-64 2020 trends with 2015-2019. One can go further back as well. 1/n... <a href="https://t.co/4P8KtNFX7P">pic.twitter.com/4P8KtNFX7P</a></p>&mdash; Asjad Naqvi (@AsjadNaqvi) <a href="https://twitter.com/AsjadNaqvi/status/1267789428078108676?ref_src=twsrc%5Etfw">June 2, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 ## Stringency index
 
@@ -101,10 +104,6 @@ Here are some of the other graph types that were posted over the course of the p
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">A late night reflection on <a href="https://twitter.com/hashtag/COVID19?src=hash&amp;ref_src=twsrc%5Etfw">#COVID19</a> situation in <a href="https://twitter.com/hashtag/Austria?src=hash&amp;ref_src=twsrc%5Etfw">#Austria</a>. Google mobility trends now provides data at the province level as well. Here we see how much was done in the first wave. Roughly 25% of the pop stayed home as compared to less than 10% now. Provinces also vary. <a href="https://t.co/cNnyGaTFGM">pic.twitter.com/cNnyGaTFGM</a></p>&mdash; Asjad Naqvi (@AsjadNaqvi) <a href="https://twitter.com/AsjadNaqvi/status/1325565527029321731?ref_src=twsrc%5Etfw">November 8, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
-## Population density
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some thoughts on attributing excess weekly deaths to <a href="https://twitter.com/hashtag/COVID19?src=hash&amp;ref_src=twsrc%5Etfw">#COVID19</a>. Here is the data for <a href="https://twitter.com/hashtag/Austria?src=hash&amp;ref_src=twsrc%5Etfw">#Austria</a> published on Eurostat. It has been reduced to compare 65+ and 0-64 2020 trends with 2015-2019. One can go further back as well. 1/n... <a href="https://t.co/4P8KtNFX7P">pic.twitter.com/4P8KtNFX7P</a></p>&mdash; Asjad Naqvi (@AsjadNaqvi) <a href="https://twitter.com/AsjadNaqvi/status/1267789428078108676?ref_src=twsrc%5Etfw">June 2, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 ## Ridge-line plots
