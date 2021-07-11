@@ -1,5 +1,5 @@
 
-:construction:  THIS SITE IS UNDER CONSTRUCTION! :construction:
+**THIS SITE IS UNDER CONSTRUCTION!**
 
 Stuff is still moving around and being updated intermittently. Once complete, this website will be formally announced on social media.
 
@@ -54,7 +54,7 @@ While Austria's data is now published regularly on the [AGES website](https://co
 
 <img src="./screenshots/dasboard_V1.jpg" height="300" title="Original dashboard">
 
-This had to be scrapped daily. Additionally the website only had the map of Austrian provinces, even though the website provided details for Bezirk-level information. So all of this started with copying down this information around the middle of March 2020 to create Bezirk level maps. Since I was already working on Bezirk data for another project where we had collected other Bezirk-level data, including administrative boundaries from [Statistik Austria](https://statistik.at/web_de/statistiken/index.html), the setup cost for doing daily COVID-19 Bezirk-level maps was fairly low. 
+This had to be scraped daily. Additionally the website only had the map of Austrian provinces, even though the website provided details for Bezirk-level information. So all of this started with copying down this information around the middle of March 2020 to create Bezirk level maps. Since I was already working on Bezirk data for another project where we had collected other Bezirk-level data, including administrative boundaries from [Statistik Austria](https://statistik.at/web_de/statistiken/index.html), the setup cost for doing daily COVID-19 Bezirk-level maps was fairly low. 
 
 ## First stage: March to October 2020
 
