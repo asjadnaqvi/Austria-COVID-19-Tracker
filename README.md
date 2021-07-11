@@ -3,7 +3,7 @@
 
 Stuff is still moving around and being updated intermittently. Once complete, this website will be formally announced on social media.
 
-Last updated 11 July 2021. 
+*Last updated 11 July 2021*
 
 # Intro
 
@@ -29,10 +29,14 @@ The folder structure is as follows:
 The dofiles create the following figures:
 
 ## Line graphs
+
+### Main figure
 <img src="./figures/AT_cases_stringency.png" height="300" title="Main graph for cases and stringency">
 
+### Hospitalization and intensive care
 <img src="./figures/covid19_austria_tests2.png" height="300" title="Hospitalization and intensive case">
 
+### Mobility trends
 <img src="./figures/covid19_mobility_stayathome.png" height="200" title="Stay at home"><img src="./figures/covid19_mobility_workplace.png" height="200" title="Workplace">
 <img src="./figures/covid19_mobility_parks.png" height="200" title="Parks"><img src="./figures/covid19_mobility_retail.png" height="200" title="Retail">
 
