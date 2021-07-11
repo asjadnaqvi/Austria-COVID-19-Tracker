@@ -1,0 +1,11 @@
+﻿Meldedatum;BundeslandID;Bundesland;NormalBettenBelCovid19;IntensivBettenKapGes;IntensivBettenBelCovid19;IntensivBettenBelNichtCovid19;IntensivBettenFrei;TestGesamt
+02.07.2021 00:00:00;1;Burgenland;4;58;2;37;19;2166515
+02.07.2021 00:00:00;2;Kärnten;14;173;2;132;39;2005704
+02.07.2021 00:00:00;3;Niederösterreich;14;335;12;229;94;11200979
+02.07.2021 00:00:00;4;Oberösterreich;4;279;6;171;102;8515835
+02.07.2021 00:00:00;5;Salzburg;3;129;0;108;21;3306333
+02.07.2021 00:00:00;6;Steiermark;2;343;1;227;115;7293891
+02.07.2021 00:00:00;7;Tirol;5;193;4;141;48;5073133
+02.07.2021 00:00:00;8;Vorarlberg;2;52;2;32;18;3449291
+02.07.2021 00:00:00;9;Wien;53;489;20;0;0;12698933
+02.07.2021 00:00:00;10;Österreich;101;2051;49;1202;800;55710614
