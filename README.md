@@ -1,7 +1,7 @@
 
 :construction:  THIS SITE IS UNDER CONSTRUCTION! :construction:
 
-Stuff is still moving around and updated. Check back later!
+Stuff is still moving around and being updated intermittently. Once complete, this website will be formally announced on social media.
 
 Last updated 11 July 2021. 
 
@@ -13,15 +13,15 @@ The aim of the tracker is to archive the code that was used to create daily COVI
 
 # Files
 
-The folder structure is as follows
+The folder structure is as follows:
 
-* sofiles: contain the Stata scripts to generate the figures
-* figures: contains the visualizations
-* GIS:     contains the spatial files
-* master:  contains the final data files
-* raw:     contains the raw data
-* screenshots: contains the screenshows displayed here
-* temp:    contains the temporary intermediate files that convert raw data to master files.
+* `dofiles`: contain the Stata scripts to generate the figures
+* `figures`: contains the visualizations
+* `GIS`:     contains the spatial files
+* `master`:  contains the final data files
+* `raw`:     contains the raw data
+* `screenshots`: contains some screenshots to display information here
+* `temp`:    contains the temporary intermediate files that convert raw data to master files.
 
 
 # Visualizations
@@ -48,7 +48,7 @@ This repository takes a look at the creation of Austria's COVID-19 tracker which
 
 While Austria's data is now published regularly on the [AGES website](https://covid19-dashboard.ages.at/). This was not the case in the beginning of the pandemic. The data was original published as a table on the original https://info.gesundheitsministerium.at/ website (now completely redesigned): 
 
-<img src="./figures/dasboard_V1.jpg" height="300" title="Original dashboard">
+<img src="./screenshots/dasboard_V1.jpg" height="300" title="Original dashboard">
 
 This had to be scrapped daily. Additionally the website only had the map of Austrian provinces, even though the website provided details for Bezirk-level information. So all of this started with copying down this information around the middle of March 2020 to create Bezirk level maps. Since I was already working on Bezirk data for another project where we had collected other Bezirk-level data, including administrative boundaries from [Statistik Austria](https://statistik.at/web_de/statistiken/index.html), the setup cost for doing daily COVID-19 Bezirk-level maps was fairly low. 
 
@@ -61,7 +61,7 @@ My daily task was to copy the data after the 11 am update. This was done manuall
 
 Here is a map of the last data point for Vienna:
 
-<img src="./figures/WIEN_covid19_reported_25_Mar_2020.png" height="300" title="Vienna breakdown">
+<img src="./screenshots/WIEN_covid19_reported_25_Mar_2020.png" height="300" title="Vienna breakdown">
 
 
 Second, there were other changes made in the databases where region names were shuffled around. The daily manual activity helped keep these changes in check since we had no Bezirk idenfiers to ensure merges were accurately done over time. 
