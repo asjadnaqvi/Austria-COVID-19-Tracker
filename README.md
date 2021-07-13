@@ -75,6 +75,10 @@ Here is a map of the last detailed data point for Vienna from 25 March 2020:
 
 Second, there were other changes made in the databases where region names were shuffled around. The daily manual activity helped keep these changes in check since we had no Bezirk identifiers to ensure merges were accurately done over time. For example, Gröbming was taken out and added to Liezen at one point to make it consistent with the latest boundaries.
 
+The figure below shows the difference between the scrapped data and the official data. The match is quite close since there is little deviation from the 45 degree line:
+
+<img src="./figures/difference_scrapped.png.png" height="300" title="Difference">
+
 
 
 ## Second stage: October 2020 to June 2021
