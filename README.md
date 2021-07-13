@@ -1,9 +1,11 @@
 
+This page will still get more updates.
+
 *Last updated: 13 July 2021*
 
 # Intro
 
-The aim of this repository is to, first, archive the code that was used to create daily COVID-19 maps and figures on Austria that I was regularly posting on Twitter. Second, is to provide some history and context to the data sharing process by Austrian authorities, what could have been done differently, and what can still be done.
+The aim of this repository is to, (a), archive the code that I was using to create daily COVID-19 maps and figures for Austria that were regularly posted on Twitter, and (b), provide some history and context to the data sharing process by Austrian authorities, what could have been done differently, and what can still be done.
 
 
 
