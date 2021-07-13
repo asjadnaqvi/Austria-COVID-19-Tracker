@@ -55,7 +55,7 @@ The following dofiles generate the following figures:
 
 Here a brief background to the Tracker is provided. The Austrian COVID-19 tracker started off as a bunch of Tweets. This was mostly due to the fact that Austria went into a hard lockdown in March 2020, most of us were stuck at home, and there was little information out there. While Austria's data is now published regularly on the [AGES website](https://covid19-dashboard.ages.at/). This was not the case in the beginning of the pandemic. The data was original published as a table on the original https://info.gesundheitsministerium.at/ website (now completely redesigned): 
 
-<img src="./screenshots/dasboard_V1.jpg" height="300" title="Original dashboard">
+<img src="./screenshots/dasboard_V1.jpg" height="400" title="Original dashboard">
 
 This had to be scraped daily. Additionally the website only had the map of Austrian provinces (9 in total), even though the website provided details for Bezirk-level information. So this started with copying down this information around the middle of March 2020 to create Bezirk (district) level maps. Since I was already working on another project where we had Bezirk-level data, including administrative boundaries from [Statistik Austria](https://statistik.at/web_de/statistiken/index.html), and a lot of scripts were in place, the setup cost for doing a COVID-19 Bezirk-level map was fairly low. 
 
@@ -70,14 +70,14 @@ My daily self-assigned duty was to copy the data after the 11 am update. This wa
 
 Here is a map of the last detailed data point for Vienna from 25 March 2020:
 
-<img src="./screenshots/WIEN_covid19_reported_25_Mar_2020.png" height="300" title="Vienna breakdown">
+<img src="./screenshots/WIEN_covid19_reported_25_Mar_2020.png" height="400" title="Vienna breakdown">
 
 
 Second, there were other changes made in the databases where region names were shuffled around. The daily manual activity helped keep these changes in check since we had no Bezirk identifiers to ensure merges were accurately done over time. For example, Gröbming was taken out and added to Liezen at one point to make it consistent with the latest boundaries.
 
 The figure below shows the difference between the scrapped data and the official data. The match is quite close since there is little deviation from the 45 degree line:
 
-<img src="./figures/difference_scrapped.png" height="300" title="Difference">
+<img src="./figures/difference_scrapped.png" height="400" title="Difference">
 
 
 
