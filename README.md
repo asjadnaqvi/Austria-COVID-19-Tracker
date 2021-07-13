@@ -22,27 +22,27 @@ The folder structure contains the following:
 | `temp` |    Contains the temporary intermediate files that convert raw data to master files. |
 
 
-Please set the path to your master folder in the dofiles. In order to replicate the figures, please also install the [TSG Schemes](https://github.com/asjadnaqvi/Stata-schemes) and the *colorpalette* package `ssc install colorpalette, replace`. A basic knowledge of Stata is assumed. Files are annotated where necessary and might be updated as this folder gets sorted out.
+Please set the path to your master folder in the dofiles. In order to replicate the figures, please also install the [TSG Schemes](https://github.com/asjadnaqvi/Stata-schemes) and the *colorpalette* package `ssc install colorpalette, replace`. A basic knowledge of Stata is assumed. Files are annotated where necessary and might still be updated.
 
 # Visualizations
 
-The dofiles create the following figures:
+The following dofiles generate the following figures:
 
 
-### 02_AT_cases_stringency_v5.do
+[02_AT_cases_stringency_v5.do](./dofiles/02_AT_cases_stringency_v5.do)
 
 <img src="./figures/AT_cases_stringency.png" height="500" title="Main graph for cases and stringency">
 
-### 03_AT_mobility.do 
+[03_AT_mobility.do](./dofiles/03_AT_mobility.do)
 
 <img src="./figures/covid19_mobility_stayathome.png" height="250" title="Stay at home"><img src="./figures/covid19_mobility_workplace.png" height="250" title="Workplace">
 <img src="./figures/covid19_mobility_parks.png" height="200" title="Parks"><img src="./figures/covid19_mobility_retail.png" height="200" title="Retail">
 
-### 04_AT_hospitalization.do
+[04_AT_hospitalization.do](./dofiles/04_AT_hospitalization.do)
 
 <img src="./figures/covid19_austria_tests2.png" height="500" title="Hospitalization and intensive case">
 
-### 05_AT_maps_BZ_v5.do
+[05_AT_maps_BZ_v5.do](./dofiles/05_AT_maps_BZ_v5.do)
 
 <img src="./figures/covid19_austria_cases.png" height="200" title="Cases"><img src="./figures/covid19_austria_deaths.png" height="200" title="Deaths">
 <img src="./figures/covid19_austria_active.png" height="200" title="Active cases"><img src="./figures/covid19_austria_active_pop.png" height="200" title="Active cases per 10k pop">
