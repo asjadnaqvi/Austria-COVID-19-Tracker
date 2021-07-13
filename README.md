@@ -77,7 +77,7 @@ Second, there were other changes made in the databases where region names were s
 
 The figure below shows the difference between the scrapped data and the official data. The match is quite close since there is little deviation from the 45 degree line:
 
-<img src="./figures/difference_scrapped.png.png" height="300" title="Difference">
+<img src="./figures/difference_scrapped.png" height="300" title="Difference">
 
 
 
