@@ -46,8 +46,8 @@ The following dofiles generate the following figures:
 
 [05_AT_maps_BZ_v5.do](./dofiles/05_AT_maps_BZ_v5.do)
 
-<img src="./figures/covid19_austria_cases.png" height="250" title="Cases"><img src="./figures/covid19_austria_deaths.png" height="250" title="Deaths">
-<img src="./figures/covid19_austria_active.png" height="250" title="Active cases"><img src="./figures/covid19_austria_active_pop.png" height="250" title="Active cases per 10k pop">
+<img src="./figures/covid19_austria_cases.png" height="200" title="Cases"><img src="./figures/covid19_austria_deaths.png" height="200" title="Deaths">
+<img src="./figures/covid19_austria_active.png" height="200" title="Active cases"><img src="./figures/covid19_austria_active_pop.png" height="200" title="Active cases per 10k pop">
 
 
 
