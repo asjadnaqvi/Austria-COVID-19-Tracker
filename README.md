@@ -38,7 +38,7 @@ The following dofiles generate the following figures:
 [03_AT_mobility.do](./dofiles/03_AT_mobility.do)
 
 <img src="./figures/covid19_mobility_stayathome.png" height="250" title="Stay at home"><img src="./figures/covid19_mobility_workplace.png" height="250" title="Workplace">
-<img src="./figures/covid19_mobility_parks.png" height="200" title="Parks"><img src="./figures/covid19_mobility_retail.png" height="200" title="Retail">
+<img src="./figures/covid19_mobility_parks.png" height="250" title="Parks"><img src="./figures/covid19_mobility_retail.png" height="250" title="Retail">
 
 [04_AT_hospitalization.do](./dofiles/04_AT_hospitalization.do)
 
@@ -46,8 +46,8 @@ The following dofiles generate the following figures:
 
 [05_AT_maps_BZ_v5.do](./dofiles/05_AT_maps_BZ_v5.do)
 
-<img src="./figures/covid19_austria_cases.png" height="200" title="Cases"><img src="./figures/covid19_austria_deaths.png" height="200" title="Deaths">
-<img src="./figures/covid19_austria_active.png" height="200" title="Active cases"><img src="./figures/covid19_austria_active_pop.png" height="200" title="Active cases per 10k pop">
+<img src="./figures/covid19_austria_cases.png" height="250" title="Cases"><img src="./figures/covid19_austria_deaths.png" height="250" title="Deaths">
+<img src="./figures/covid19_austria_active.png" height="250" title="Active cases"><img src="./figures/covid19_austria_active_pop.png" height="250" title="Active cases per 10k pop">
 
 
 
