@@ -1,7 +1,7 @@
 
 This page will still get more updates.
 
-*Last updated: 13 July 2021*
+*Last updated: 21 July 2021*
 
 # Intro
 
@@ -100,13 +100,13 @@ By December 2020, information was fairly standardized, and the biggest concern w
 
 # Useful links
 
-Here are several websites in Austria that collate information or display their own projects:
+Here are several websites in Austria that collate data or display their own projects:
 
 [Bundesministerium für Bildung, Wissenschaft und Forschung (BMBWF)](https://www.bmbwf.gv.at/)
 
 [Austrian Corona Panel Project (ACPP)](https://viecer.univie.ac.at/coronapanel/)
 
-[International Institute for Applied Systems Analysis (IIASA)](https://covid19.iiasa.ac.at/)
+[International Institute for Applied Systems Analysis' (IIASA) Interactive Socioeconomic Tracker](https://covid19.iiasa.ac.at/interactive/)
 
 [TU Wien COVID-19 Simulation model](https://informatics.tuwien.ac.at/news/1873)
 
@@ -121,6 +121,7 @@ Here are several websites in Austria that collate information or display their o
 [Österreichische Akademie der Wissenschaften (ÖAW)](https://www.oeaw.ac.at/vid/research/covid-19research/covid-19-tracker/)
 
 
+Additional links coming soon.
 
 
 # Miscellaneous 

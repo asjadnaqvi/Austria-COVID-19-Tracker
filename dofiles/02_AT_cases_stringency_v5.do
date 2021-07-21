@@ -1,21 +1,21 @@
 clear
 
+
+// install the schemes and packages
+*ssc install colorpalette, replace
+*net install tsg_schemes, from("https://raw.githubusercontent.com/asjadnaqvi/Stata-schemes/main/schemes/") replace
+set scheme white_tableau
+graph set window fontface "Arial Narrow"
+
+
+
 cap cd "D:/Programs/Dropbox/Dropbox/PROJECT COVID AT"
 
 
 
-
-
-*** getting the raw data from the website https://info.gesundheitsministerium.at/
 use ./master/austria_covid19.dta, clear
-
 collapse (sum) cases cases_daily deaths deaths_daily recovered recovered_daily pop, by(BDL date)
 
-
-*merge m:1 date using ./split/stringency/stringency_AT
-*drop if _m==2					
-*drop _m
-				
 
 
 encode BDL, gen(BDL2)				
@@ -25,13 +25,11 @@ xtset BDL2 date
 
 bysort date: egen cases_daily_tot = sum(cases_daily)
 
-sort BDL date		 			
-	tssmooth ma cases_ma 		= cases_daily, w(2 1 0)
-	tssmooth ma deaths_ma 		= deaths_daily, w(2 1 0)
+
 		
 
 
-
+// merge with the stringency file
 merge m:1 date using "./master/austria_stringency"
 drop if _m==2					
 drop _m
@@ -40,17 +38,8 @@ egen tag = tag(date)    // these are the unique observations for stringency date
 
 
 
-sort BDL date
-gen doublingtime = ((date - date[_n-10]) * log(2)) / (log(cases) - log(cases[_n-10]))
 
-
-
-
-xtset BDL2 date
-
-
-*keep BDL BDL2 date cases cases_daily deaths recovered active total_cases stringency cases_ma tag_date
-
+// format the date for display
 summ date
 
 local date: display %tdd_m_y `r(max)'
@@ -59,12 +48,14 @@ display "`date'"
 local date2 = subinstr(trim("`date'"), " ", "_", .)
 display "`date2'"
 
-gen date2 = date
+
+// smooth the data
+
+sort BDL date		 			
+	tssmooth ma cases_ma 		= cases_daily, w(2 1 0)
+	tssmooth ma deaths_ma 		= deaths_daily, w(2 1 0)
 
 
-
-
-sort BDL date
 gen cases_ma_smooth =. 
 
 levelsof BDL2, local(lvls)
@@ -75,14 +66,9 @@ drop temp`x'
 }
 
 
-
-
-*gen rank  = .
-
 summ date
 egen rank = rank(cases_ma_smooth) if date==`r(max)', f
 
-*br date BDL rank if rank!=.
 
 levelsof BDL, local(lvls)
  
@@ -93,19 +79,7 @@ foreach x of local lvls {
  cap replace rank = `r(max)' if BDL=="`x'" & rank==.
  }
 
-/*
-levelsof date, local(dts)
-foreach x of local dts {
-egen temp`x' = rank(cases_ma_smooth) if date==`x', f
-replace rank = temp`x' if date==`x'
 
-
-drop temp`x'
-}
-*/
-
-*sort date BDL
-*drop if date < 21980
 
 summ date 
 local x1 = `r(min)'
@@ -113,18 +87,16 @@ local x2 = `r(max)' + 10
 local today = `r(max)'
 
 local dist = `x2' - `x1'
-*display `dist'
+
 
 sort BDL date
 bysort BDL: gen diff = cases_ma_smooth - cases_ma_smooth[_n-1]
 replace diff=0 if diff==.
 
 gen angle = atan2(1, diff * 3/5 * `dist' / 1600)  * (-180 / _pi)
-*gen angle = atan2(1, diff * 5/3 * `dist' / 2000) * (-180 / _pi)
 
 
-
-*******
+// sort the stringency stuff
 
 foreach x of varlist c1_schoolclosing c2_workplaceclosing c3_cancelpublicevents c4_restrictionsongatherings ///
 		c5_closepublictransport c6_stayathomerequirements c7_restrictionsoninternalmovemen ///
@@ -176,47 +148,15 @@ replace pmarker = "Restrict international travel" 	if ymarker==1300
 replace pmarker = "Masks" 							if ymarker==1400
 
 
-*gen label = BDL + "  (" + string(doublingtime, "%9.0f") + " days)" // if tag_BDL==1
 gen label = BDL + "  (" + string(cases_daily, "%9.0f") + ")" // if tag_BDL==1
 
-colorpalette gs14 gs4, ipolate(12) reverse nograph
 
-forval i = 1/11 {
-	local color`i' `r(p`i')'
-}
 
-/*
-local color1  `r(p1)'
-local color2  `r(p2)'
-local color3  `r(p3)'
-local color4  `r(p4)'
-local color5  `r(p5)'
-local color6  `r(p6)'
-local color7  `r(p7)'
-local color8  `r(p8)'
-local color9  `r(p9)'
-local color10  `r(p10)'
-local color11  `r(p11)'
-*/
 
-/*
-twoway ///	
-	(scatter c1 date  [aweight = c1_schoolclosing]					if tag==1, mcolor("`color1'%25")  mlwidth(none)	msize(vtiny) msymbol(smsquare)) ///
-	(scatter c2 date  [aweight = c2_workplaceclosing]				if tag==1, mcolor("`color2'%25")  mlwidth(none)	msize(vtiny) msymbol(smsquare)) ///
-	(scatter c3 date  [aweight = c3_cancelpublicevents]				if tag==1, mcolor("`color3'%25")  mlwidth(none)	msize(vtiny) msymbol(smsquare)) ///
-	(scatter c4 date  [aweight = c4_restrictionsongatherings]		if tag==1, mcolor("`color4'%25")  mlwidth(none)	msize(vtiny) msymbol(smsquare)) ///
-	(scatter c5 date  [fweight = c5_closepublictransport]			if tag==1, mcolor("`color5'%25")  mlwidth(none)	msize(vtiny) msymbol(smsquare)) ///
-	(scatter c6 date  [aweight = c6_stayathomerequirements]			if tag==1, mcolor("`color6'%25")  mlwidth(none)	msize(vtiny) msymbol(smsquare)) ///
-	(scatter c7 date  [aweight = c7_restrictionsoninternalmovemen]	if tag==1, mcolor("`color7'%25")  mlwidth(none)	msize(vtiny) msymbol(smsquare)) ///
-	(scatter c8 date  [aweight = c8_internationaltravelcontrols]	if tag==1, mcolor("`color8'%25")  mlwidth(none)	msize(vtiny) msymbol(smsquare)) ///		
-	(scatter c9  date [aweight = h2_testingpolicy]					if tag==1, mcolor("`color9'%25")  mlwidth(none)	msize(tiny) msymbol(smsquare)) ///
-	(scatter c10 date [aweight = h3_contacttracing]					if tag==1, mcolor("`color10'%25")  mlwidth(none) msize(tiny) msymbol(smsquare)) ///
-	(scatter c11 date [aweight = e1_incomesupport]					if tag==1, mcolor("`color11'%25")  mlwidth(none) msize(vtiny) msymbol(smsquare)) ///	
-	 (scatter ymarker xmarker, mcolor(black) msymbol(none) mlabel(pmarker) mlabsize(vsmall) mlabcolor(black) mlabgap(-5)) ///
-			, ylabel(0(40)220)	///
-			legend(off)
-*/
-			
+******* DRAW ****
+
+
+		
 summ date
 local x1 = `r(min)' - 80
 local x2 = `r(max)' + 80 			
@@ -235,8 +175,6 @@ local angle`y' = `r(mean)'
 
 	
 sort  date	 BDL
-*colorpalette red orange gray, ipolate(9) reverse nograph
-*colorpalette matplotlib autumn, n(10) reverse nograph
 colorpalette viridis, n(11) reverse nograph
 		
 twoway ///
@@ -275,6 +213,11 @@ twoway ///
 				ylabel(0(200)1600, labsize(vsmall) glwidth(vvthin) glpattern(solid)) ///
 		title("{fontface Arial Bold:COVID-19 cases for Austria: `casestoday' on `date'}", size(medlarge)) ///
 		note("Data: https://covid19-dashboard.ages.at/. Policy Stringency Data: Oxford COVID-19 Government Response Tracker. Strength of policy is indicated by marker size." "Cases for the last reported date for each province given in brackets.", size(*0.6)) ///
-		legend(off) 	scheme(cleanplots)
+		legend(off) 
+		
+		
 graph export "figures/AT_cases_stringency.png", replace wid(3000)		
 
+
+
+************ END OF FILE *************

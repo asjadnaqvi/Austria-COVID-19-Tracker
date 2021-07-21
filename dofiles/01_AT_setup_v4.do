@@ -110,3 +110,4 @@ compress
 save ./master/austria_stringency.dta, replace
 
 
+************ END OF FILE *************

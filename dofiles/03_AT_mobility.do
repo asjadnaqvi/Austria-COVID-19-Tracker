@@ -1,10 +1,15 @@
 clear
 
+*net install tsg_schemes, from("https://raw.githubusercontent.com/asjadnaqvi/Stata-schemes/main/schemes/") replace
+set scheme white_tableau
+graph set window fontface "Arial Narrow"
+
+
 cap cd "D:/Programs/Dropbox/Dropbox/PROJECT COVID AT"
 
 
 {
-**** 01 index of identifiers
+**** 01 index of identifiers. need to run one time unless IDs change
 
 /*
 insheet using "https://storage.googleapis.com/covid19-open-data/v2/index.csv", clear 
@@ -16,7 +21,7 @@ insheet using "https://storage.googleapis.com/covid19-open-data/v2/index.csv", c
 */
 
 
-***** 08 mobility
+***** 08 mobility. Heavy file. Update infrequently.
 
 /*
 insheet using "https://storage.googleapis.com/covid19-open-data/v2/mobility.csv", clear 

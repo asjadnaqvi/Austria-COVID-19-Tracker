@@ -1,12 +1,16 @@
 clear
 
+*net install tsg_schemes, from("https://raw.githubusercontent.com/asjadnaqvi/Stata-schemes/main/schemes/") replace
+set scheme white_tableau
+graph set window fontface "Arial Narrow"
+
 cap cd "D:/Programs/Dropbox/Dropbox/PROJECT COVID AT"
 
 
 copy "https://just-the-covid-facts.neuwirth.priv.at/download_data/COVID_19_Oesterreich.xlsx" "./raw/AT_hospital_data.xlsx", replace
 
 
-set scheme white_tableau
+
 
 
 **** Sheet 1 cases
@@ -280,4 +284,4 @@ twoway ///
 
 
 		
-**** END OF FILE *****		
+********* END OF FILE ***********

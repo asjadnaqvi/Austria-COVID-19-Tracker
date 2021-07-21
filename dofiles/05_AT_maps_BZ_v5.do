@@ -1,9 +1,10 @@
 clear
 
-cap cd "D:/Programs/Dropbox/Dropbox/PROJECT COVID AT"
+*net install tsg_schemes, from("https://raw.githubusercontent.com/asjadnaqvi/Stata-schemes/main/schemes/") replace
 set scheme white_tableau
+graph set window fontface "Arial Narrow"
 
-
+cap cd "D:/Programs/Dropbox/Dropbox/PROJECT COVID AT"
 
 
 cd GIS/
@@ -56,7 +57,7 @@ format active %9.0fc
 format active_pop %9.0fc
 
 sort bezirk date		
-bysort bezirk: gen deaths_pastx = deaths - deaths[_n-30]		 
+bysort bezirk: gen deaths_pastx = deaths - deaths[_n-60]		 
 recode deaths_pastx (0=.)	
 
 
@@ -127,8 +128,6 @@ summ cases_daily if date==`r(max)', d
 local diff = `r(sum)'
 
 display `diff'	
-
-*colorpalette viridis, n(8) reverse nograph
 colorpalette red orange gs14, ipolate(8) reverse nograph
 local colors `r(p)'
 
@@ -136,7 +135,7 @@ summ date
 	
 
 spmap cases_daily using "bezirk_shp.dta" if date==`r(max)', ///
-id(_ID) cln(6) fcolor("`colors'")  /// //  clm(custom) clbreaks(1 2 5 10 20 30 50 80 100 150 200 1000)
+id(_ID) cln(6) fcolor("`colors'")  /// 
 	ocolor(white ..) osize(vvthin ..) ///
 	ndfcolor(white ..) ndocolor(gs8 ..) ndsize(vvthin ..) ndlabel("No cases") ///
 		legend(pos(11) size(*1.2) symx(*1) symy(*1) forcesize) legstyle(2)   ///
@@ -156,20 +155,15 @@ summ active if date==`r(max)', d
 local diff = `r(sum)'
 local diff : di %9.0fc `diff'
 
-display `diff'	
 
-*colorpalette matplotlib autumn, ipolate(14, power(0.8)) reverse nograph
-*colorpalette viridis,n(8) reverse nograph
-*colorpalette gs14 gs4, ipolate(12) reverse nograph
 colorpalette red orange gs14, n(12) reverse nograph
-
 local colors `r(p)'
 
 summ date
 	
 
 spmap active using "bezirk_shp.dta" if date==`r(max)', ///
-id(_ID) clm(k) cln(10) fcolor("`colors'")  /// //  clm(custom) clbreaks(0(5)45) 
+id(_ID) clm(k) cln(10) fcolor("`colors'")  /// 
 	ocolor(white ..) osize(vvthin ..) ///
 	ndfcolor(white ..) ndocolor(gs8 ..) ndsize(vvthin ..) ndlabel("No cases") ///
 		legend(pos(11) size(*1.2) symx(*1) symy(*1) forcesize) legstyle(2)   ///
@@ -189,19 +183,15 @@ summ active_pop if date==`r(max)', d
 local diff = `r(mean)'
 local diff : di %9.0fc `diff'
 
-display `diff'	
 
-*colorpalette matplotlib autumn, ipolate(12, power(1.6)) reverse nograph
-*colorpalette gs14 gs4, ipolate(12) reverse nograph
 colorpalette red orange gs14, n(12) reverse nograph
-*colorpalette viridis, ipolate(14) reverse nograph
 local colors `r(p)'
 
 summ date
 	
 
 spmap active_pop using "bezirk_shp.dta" if date==`r(max)', ///
-id(_ID) cln(10)   fcolor("`colors'")  /// //  clm(custom) clbreaks(0(5)45) 
+id(_ID) cln(10)   fcolor("`colors'")  /// 
 	ocolor(white ..) osize(vvthin ..) ///
 	ndfcolor(white ..) ndocolor(gs8 ..) ndsize(vvthin ..) ndlabel("No cases") ///
 		legend(pos(11) size(*1.2) symx(*1) symy(*1) forcesize) legstyle(2)   ///
@@ -215,7 +205,7 @@ id(_ID) cln(10)   fcolor("`colors'")  /// //  clm(custom) clbreaks(0(5)45)
 
 		
 		
-*** deaths in the last 30 days
+*** deaths in the past 60 days
 
 
 		
@@ -224,26 +214,22 @@ summ deaths_pastx if date==`r(max)', d
 local diff = `r(sum)'
 
 display `diff'			
-		
-
-*colorpalette matplotlib autumn, ipolate(15, power(1.2)) reverse nograph
-*colorpalette gs14 gs4, ipolate(12) reverse nograph
 colorpalette red orange gs14, ipolate(7) reverse nograph
-*colorpalette viridis, ipolate(14) reverse nograph
+
 local colors `r(p)'		
 summ date		
 		
 spmap deaths_pastx using "bezirk_shp.dta" if date==`r(max)', ///
-id(_ID) clm(k) cln(5)  fcolor("`colors'")  /// //  clm(custom) clbreaks(0(5)45) 
+id(_ID) clm(k) cln(5)  fcolor("`colors'")  /// 
 	ocolor(white ..) osize(vvthin ..) ///
 	ndfcolor(white ..) ndocolor(gs8 ..) ndsize(vvthin ..) ndlabel("No deaths") ///
 		legend(pos(11) size(*1.2) symx(*1) symy(*1) forcesize) legstyle(2)   ///
   	    polygon(data("NUTS2_shp")  ocolor(black)  osize(thin) legenda(on) legl("Bundesländer")) ///
 		label(data("map_labels.dta") x(_CX) y(_CY) label(name4) size(*0.5 ..) length(30)) ///
-		title("{fontface Arial Bold:COVID-19 Deaths in the last 30 days (`date')}", size(large)) ///
+		title("{fontface Arial Bold:COVID-19 Deaths in the past 60 days (`date')}", size(large)) ///
 		subtitle("Total = `diff'", size(small)) ///
 		note("Map layer: Statistik Austria. Data: https://covid19-dashboard.ages.at/", size(vsmall))
 		graph export "../figures/covid19_austria_deaths.png", replace wid(3000)	
 
 				
-		
+********* END OF FILE ***********		
