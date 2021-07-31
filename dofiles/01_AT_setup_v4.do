@@ -4,21 +4,8 @@ cap cd "D:/Programs/Dropbox/Dropbox/PROJECT COVID AT"
 
 
 
-**** scrapped data
 
-
-import excel using "./raw/austria_scrapped_data.xlsx", first clear
-ren anzahl* cases*
-drop if id==.
-compress
-save "./temp/austria_scrapped_data.dta", replace
-
-
-
-
-
-
-*** getting the raw data from the website https://info.gesundheitsministerium.at/
+*** getting the raw data from https://covid19-dashboard.ages.at/
 
 
 copy "https://covid19-dashboard.ages.at/data/data.zip" "./raw/data.zip", replace

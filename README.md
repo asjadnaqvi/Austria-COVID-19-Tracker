@@ -1,7 +1,7 @@
 
 This page will still get more updates.
 
-*Last updated: 21 July 2021*
+*Last updated: 31 July 2021:* Minor fixes to the code.
 
 # Intro
 
