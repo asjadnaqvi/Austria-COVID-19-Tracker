@@ -37,8 +37,13 @@ The following dofiles generate the following figures:
 
 [03_AT_mobility.do](./dofiles/03_AT_mobility.do)
 
-<img src="./figures/covid19_mobility_stayathome.png" height="250" title="Stay at home"><img src="./figures/covid19_mobility_workplace.png" height="250" title="Workplace">
-<img src="./figures/covid19_mobility_parks.png" height="250" title="Parks"><img src="./figures/covid19_mobility_retail.png" height="250" title="Retail">
+<img src="./figures/covid19_mobility_stayathome.png" height="500" title="Stay at home">
+
+<img src="./figures/covid19_mobility_workplace.png" height="500" title="Workplace">
+
+<img src="./figures/covid19_mobility_parks.png" height="500" title="Parks">
+
+<img src="./figures/covid19_mobility_retail.png" height="500" title="Retail">
 
 [04_AT_hospitalization.do](./dofiles/04_AT_hospitalization.do)
 
@@ -89,7 +94,7 @@ The second phase of the tracker, where the data switched to the AGES website, wa
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">A major change in the <a href="https://twitter.com/hashtag/Austrian?src=hash&amp;ref_src=twsrc%5Etfw">#Austrian</a> <a href="https://twitter.com/hashtag/COVID19?src=hash&amp;ref_src=twsrc%5Etfw">#COVID19</a> dashboard that was recently taken over by <a href="https://twitter.com/hashtag/AGES?src=hash&amp;ref_src=twsrc%5Etfw">#AGES</a>. Data is no longer shown at the district level but complete time series is now available for cases and deaths at the district level. Could have released info on gender/age as well. <a href="https://twitter.com/hashtag/moredata?src=hash&amp;ref_src=twsrc%5Etfw">#moredata</a> <a href="https://t.co/irWZePdmId">pic.twitter.com/irWZePdmId</a></p>&mdash; Asjad Naqvi (@AsjadNaqvi) <a href="https://twitter.com/AsjadNaqvi/status/1314132730901336064?ref_src=twsrc%5Etfw">October 8, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-By this time several people, most notably [Eric Neuwirth](https://just-the-covid-facts.neuwirth.priv.at/), were making maps and figures daily in German to cater to the local audience. All local newspapers had also set up their own interactive visualizations. I had somewhat captured the international/expat community and my posts were also featured here and there. Most notably [Metropole](https://metropole.at/) picked these up a couple of times. I also recieved messages from random people for the maps, mostly internationals living in Vienna or parents of kids studying here. 
+By this time several people, most notably [Erich Neuwirth](https://just-the-covid-facts.neuwirth.priv.at/), were making maps and figures daily in German to cater to the local audience. All local newspapers had also set up their own interactive visualizations. I had somewhat captured the international/expat community and my posts were also featured here and there. Most notably [Metropole](https://metropole.at/) picked these up a couple of times. I also recieved messages from random people for the maps, mostly internationals living in Vienna or parents of kids studying here. 
 
 The data switch to AGES was not without hiccups. It was not clear when and how the information was updated. This was also the time when testing was scaling up, and information was coming in rapidly. This also had an impact on the visualizations. Figures changed considerably from one hour to the next, with data also back corrected, probably based on when the test samples were collected. This also caused considerable confusion since different numbers were popping up at the same time online. After some weeks, AGES (rightfully so) changed its strategy and started publishing data for the day earlier and with only one update at midnight to ensure the numbers were consistent. This was already standard practice for other larger countries like Germany and France which still have one or two day lags but back-corrections were rare.
 
@@ -114,7 +119,7 @@ Here are several websites in Austria that collate data or display their own proj
 
 [Österreichisches Institut für Wirtschaftsforschung (WIFO)](https://www.wifo.ac.at/jart/prj3/wifo/main.jart?rel=de&content-id=1592280018229&reserve-mode=active)
 
-[Erich Neuwirths COVID-19-Analysen](https://just-the-covid-facts.neuwirth.priv.at/)
+[Erich Neuwirth's COVID-19-Analysen](https://just-the-covid-facts.neuwirth.priv.at/)
 
 [Corona Ampel](https://corona-ampel.gv.at/)
 
