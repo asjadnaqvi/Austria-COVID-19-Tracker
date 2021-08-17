@@ -88,7 +88,7 @@ The figure below shows the difference between the scrapped data and the official
 
 
 
-## Second stage: October 2020 to June 2021
+## Second stage: October 2020 to present
 
 The second phase of the tracker, where the data switched to the AGES website, was fairly straightforward: automate the data download from the website, process the files, and make the maps and other figures. 
 
