@@ -161,7 +161,7 @@ twoway `customline' ///
 		xtitle("") ///
 		title("Population going to work: % change from baseline") ///
 		note("Source: Google mobility trends", size(vsmall)) ///
-		legend(off)	
+		legend(off)	xsize(2) ysize(1)	
 		graph export "figures/covid19_mobility_workplace.png", replace wid(2000)	
 		
 
@@ -208,7 +208,7 @@ twoway `customline' ///
 		xtitle("") ///
 		title("Population staying home: % change from baseline") ///
 		note("Source: Google mobility trends", size(vsmall)) ///
-		legend(off)	
+		legend(off)		xsize(2) ysize(1)
 		graph export "figures/covid19_mobility_stayathome.png", replace wid(2000)	
 		
 
@@ -253,7 +253,7 @@ twoway `customline' ///
 		xtitle("") ///
 		title("Population going to parks: % change from baseline") ///
 		note("Source: Google mobility trends", size(vsmall)) ///
-		legend(off)	
+		legend(off)		xsize(2) ysize(1)
 		graph export "figures/covid19_mobility_parks.png", replace wid(2000)	
 		
 
@@ -298,7 +298,7 @@ twoway `customline' ///
 		xtitle("") ///
 		title("Population going shopping/recreation: % change from baseline") ///
 		note("Source: Google mobility trends", size(vsmall)) ///
-		legend(off)	
+		legend(off)	xsize(2) ysize(1)
 		graph export "figures/covid19_mobility_retail.png", replace wid(2000)	
 		
 

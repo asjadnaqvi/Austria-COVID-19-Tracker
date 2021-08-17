@@ -213,7 +213,7 @@ twoway ///
 				ylabel(0(200)1600, labsize(vsmall) glwidth(vvthin) glpattern(solid)) ///
 		title("{fontface Arial Bold:COVID-19 cases for Austria: `casestoday' on `date'}", size(medlarge)) ///
 		note("Data: https://covid19-dashboard.ages.at/. Policy Stringency Data: Oxford COVID-19 Government Response Tracker. Strength of policy is indicated by marker size." "Cases for the last reported date for each province given in brackets.", size(*0.6)) ///
-		legend(off) 
+		legend(off) 	xsize(2) ysize(1)
 		
 		
 graph export "figures/AT_cases_stringency.png", replace wid(3000)		

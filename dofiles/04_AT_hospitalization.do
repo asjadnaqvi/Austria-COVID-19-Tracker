@@ -279,7 +279,7 @@ twoway ///
 			note("Source: Eric Neuwirth's COVID-19 database.", size(vsmall))) ///
 			by(, legend(off)) ///
 			by(BDL, yrescale)	///
-			subtitle(, lcolor(none)) 
+			subtitle(, lcolor(none)) 	xsize(2) ysize(1)
 		graph export "./figures/covid19_austria_tests2.png", replace wid(2000)			
 
 
