@@ -268,15 +268,15 @@ format date %tdMon-yy
 
 
 twoway ///
-	(line hosp_daily date		, sort yaxis(2)   lw(thin)) ///
-	(line intensive_daily date	, sort 			  lw(thin)) ///
+	(line hosp_daily date		, sort lp(-)    lw(thin)) ///
+	(line intensive_daily date	, sort yaxis(2) lw(thin)) ///
 		if BDL!="Gesamt", ///
-			ytitle("Yellow = Hospitalized (left y-axis), Blue = Intensive care (right y-axis)") ///
+			ytitle("Orange solid = Hospitalized (left y-axis), Blue dash = Intensive care (right y-axis)") ///
 			ytitle(, size(small)) ///
 			xtitle("") ///
 			xlabel(#10, labsize(vsmall) angle(vertical)) ///
 			by(, title("{fontface Arial Bold: COVID-19 Hopitalized and Intensive care in Austria}") ///
-			note("Source: Eric Neuwirth's COVID-19 database.", size(vsmall))) ///
+			note("Source: Erich Neuwirth's COVID-19 database.", size(vsmall))) ///
 			by(, legend(off)) ///
 			by(BDL, yrescale)	///
 			subtitle(, lcolor(none)) 	xsize(2) ysize(1)

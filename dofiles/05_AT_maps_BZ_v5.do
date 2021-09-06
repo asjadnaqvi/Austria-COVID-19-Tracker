@@ -232,4 +232,12 @@ id(_ID) clm(k) cln(5)  fcolor("`colors'")  ///
 		graph export "../figures/covid19_austria_deaths.png", replace wid(3000)	
 
 				
+
+// reset the directory
+
+cd ..				
+				
+				
 ********* END OF FILE ***********		
+
+

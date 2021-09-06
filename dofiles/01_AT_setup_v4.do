@@ -14,7 +14,7 @@ unzipfile data.zip, replace
 cd ..
 
 
-insheet using "https://covid19-dashboard.ages.at/data/CovidFaelle_Timeline_GKZ.csv", clear delim(;)
+import delim using "https://covid19-dashboard.ages.at/data/CovidFaelle_Timeline_GKZ.csv", clear
 
 
 ren gkz id
@@ -65,12 +65,50 @@ order BDL BDL_id bezirk id date
 compress
 save "master/austria_covid19.dta", replace
 
+**** cases by age group here
 
+
+import delim using "./raw/CovidFaelle_Altersgruppe.csv", clear
+
+
+gen year  = substr(time,7,4)
+gen month = substr(time,4,2)
+gen day   = substr(time,1,2)
+destring month day year, replace
+drop time
+gen date = mdy(month,day,year)
+format date %tdDD-Mon-yy
+drop month day year
+order date
+
+labmask altersgruppeid, val(altersgruppe)
+*labmask bundeslandid, 	val(bundesland)
+
+replace geschlecht = "1" if geschlecht=="M"
+replace geschlecht = "2" if geschlecht=="W"
+destring geschlecht, replace
+lab de gender 1 "Male" 2 "Female"
+lab val geschlecht gender
+
+*drop if bundeslandid==10
+drop altersgruppe
+drop bundeslandid
+
+ren altersgruppeid 	agegrp
+ren bundesland  	province	
+ren anzeinwohner	pop
+ren geschlecht		gender
+ren anzahl			total_infected
+ren anzahlgeheilt   total_recovered
+ren anzahltot		total_dead
+
+compress
+save "master/austria_covid19_by_agegender.dta", replace
 
 
 **** Stringency file here
 
-insheet using "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv", clear
+import delim using "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv", clear
 
 
 
@@ -94,7 +132,9 @@ drop month day year
 order date
 
 compress
-save ./master/austria_stringency.dta, replace
+save "./master/austria_stringency.dta", replace
+
+
 
 
 ************ END OF FILE *************
