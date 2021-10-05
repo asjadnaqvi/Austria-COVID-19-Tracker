@@ -32,7 +32,7 @@ gen share_vacc_full = (vac_full / pop) * 100
 
 
 format share_vacc_full 	%9.2f
-format change_7days 	%9.2f
+*format change_7days 	%9.2f
 
 *gen share_vacc_any  = ((vac_full + vac_partial) / pop) * 100
 
@@ -92,7 +92,7 @@ id(_ID) clm(k) cln(10) fcolor("`colors'")  ///
 
 		
 
-		
+cd ..		
 		
 *** END OF FILE ***
 
