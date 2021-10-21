@@ -24,7 +24,7 @@ The folder structure contains the following:
 | `temp` |    Contains the temporary intermediate files that convert raw data to master files. |
 
 
-Please set the path to your master folder in the dofiles. In order to replicate the figures, please also install the [TSG Schemes](https://github.com/asjadnaqvi/Stata-schemes) and the *colorpalette* package `ssc install colorpalette, replace`. A basic knowledge of Stata is assumed. Files are annotated where necessary and might still be updated.
+Please set the path to your master folder in the dofiles. In order to replicate the figures, please also install the [TSG Schemes](https://github.com/asjadnaqvi/Stata-schemes) and the *colorpalette* package `ssc install colorpalette, replace`. A basic knowledge of Stata is assumed. Files are annotated, and are updated as necessary. The [00_AT_master.do](./dofiles/00_AT_master.do) runs all the other files and compiles the graphs.
 
 # Visualizations
 
