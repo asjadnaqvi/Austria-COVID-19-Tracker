@@ -144,7 +144,7 @@ local xmax = `r(max)'
 
 
 heatplot ratioFM_ma i.agegrp date if province=="Österreich", ///
-	cuts(0(0.1)2) xbins(160) color(hsv purplegreen, reverse) p(lc(white) lw(0.06))  /// // 
+	cuts(0(0.1)2) xbins(180) color(hsv purplegreen, reverse) p(lc(white) lw(0.06))  /// // 
 	xtitle("") /// 
 	ramp(bottom length(80) space(10) subtitle("") label(0 "Twice more men" 1 "Equal" 2 "Twice more women"))  ///
 	xlabel(`xmin'(30)`xmax', labsize(2) angle(vertical) format(%tdDD-Mon-yy) nogrid) ///
