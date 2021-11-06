@@ -98,8 +98,8 @@ display `diff'
 
 *colorpalette matplotlib autumn, n(10) reverse nograph
 *colorpalette gs14 gs4, ipolate(12) reverse nograph
-colorpalette red orange gs14, ipolate(9) reverse nograph
-*colorpalette viridis, n(6) reverse nograph
+*colorpalette red orange gs14, ipolate(9) reverse nograph
+colorpalette viridis, n(9) reverse nograph
 local colors `r(p)'
 
 summ date
@@ -128,7 +128,8 @@ summ cases_daily if date==`r(max)', d
 local diff = `r(sum)'
 
 display `diff'	
-colorpalette red orange gs14, ipolate(8) reverse nograph
+*colorpalette red orange gs14, ipolate(8) reverse nograph
+colorpalette viridis, n(9) reverse nograph
 local colors `r(p)'
 
 summ date
@@ -157,6 +158,7 @@ local diff : di %9.0fc `diff'
 
 
 colorpalette red orange gs14, n(12) reverse nograph
+colorpalette viridis, n(13) reverse nograph
 local colors `r(p)'
 
 summ date
@@ -185,6 +187,7 @@ local diff : di %9.0fc `diff'
 
 
 colorpalette red orange gs14, n(12) reverse nograph
+colorpalette viridis, n(13) reverse nograph
 local colors `r(p)'
 
 summ date
@@ -215,6 +218,7 @@ local diff = `r(sum)'
 
 display `diff'			
 colorpalette red orange gs14, ipolate(7) reverse nograph
+colorpalette viridis, n(8) reverse nograph
 
 local colors `r(p)'		
 summ date		
