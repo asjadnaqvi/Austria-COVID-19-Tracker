@@ -57,7 +57,7 @@ format active %9.0fc
 format active_pop %9.0fc
 
 sort bezirk date		
-bysort bezirk: gen deaths_pastx = deaths - deaths[_n-60]		 
+bysort bezirk: gen deaths_pastx = deaths - deaths[_n-14]		 
 recode deaths_pastx (0=.)	
 
 
@@ -208,9 +208,9 @@ id(_ID) cln(10)   fcolor("`colors'")  ///
 
 		
 		
-*** deaths in the past 60 days
+*** deaths in the past 14 days
 
-
+format deaths_pastx %9.0f
 		
 summ date		
 summ deaths_pastx if date==`r(max)', d
@@ -218,19 +218,19 @@ local diff = `r(sum)'
 
 display `diff'			
 colorpalette red orange gs14, ipolate(7) reverse nograph
-colorpalette viridis, n(8) reverse nograph
+colorpalette viridis, n(7) reverse nograph
 
 local colors `r(p)'		
 summ date		
 		
 spmap deaths_pastx using "bezirk_shp.dta" if date==`r(max)', ///
-id(_ID) clm(k) cln(5)  fcolor("`colors'")  /// 
+id(_ID) clm(k) cln(6)  fcolor("`colors'")  /// 
 	ocolor(white ..) osize(vvthin ..) ///
 	ndfcolor(white ..) ndocolor(gs8 ..) ndsize(vvthin ..) ndlabel("No deaths") ///
 		legend(pos(11) size(*1.2) symx(*1) symy(*1) forcesize) legstyle(2)   ///
   	    polygon(data("NUTS2_shp")  ocolor(black)  osize(thin) legenda(on) legl("Bundesländer")) ///
 		label(data("map_labels.dta") x(_CX) y(_CY) label(name4) size(*0.5 ..) length(30)) ///
-		title("{fontface Arial Bold:COVID-19 Deaths in the past 60 days (`date')}", size(large)) ///
+		title("{fontface Arial Bold:COVID-19 Deaths in the past 14 days (`date')}", size(large)) ///
 		subtitle("Total = `diff'", size(small)) ///
 		note("Map layer: Statistik Austria. Data: https://covid19-dashboard.ages.at/", size(vsmall))
 		graph export "../figures/covid19_austria_deaths.png", replace wid(3000)	

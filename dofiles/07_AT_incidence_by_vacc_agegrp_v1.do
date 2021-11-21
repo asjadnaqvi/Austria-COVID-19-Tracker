@@ -6,10 +6,6 @@ cap cd "D:\Programs\Dropbox\Dropbox\PROJECT COVID AT"
 
 
 
-import delimited using "https://www.ages.at/fileadmin/AGES2015/Themen/Krankheitserreger_Dateien/Coronavirus/Inzidenz_Impfstatus/Inzidenz_vollstaendig_unvollstaendig_geimpft_2021-08-20.csv", clear varn(1)
-
-
-
 // 12-17 age group
 import delim using "https://www.ages.at/fileadmin/AGES2015/Themen/Krankheitserreger_Dateien/Coronavirus/Inzidenz_Impfstatus/Inzidenz_Impfstatus_12bis17Jahre.csv", clear varn(1)
 

@@ -93,7 +93,7 @@ sort BDL date
 bysort BDL: gen diff = cases_ma_smooth - cases_ma_smooth[_n-1]
 replace diff=0 if diff==.
 
-gen angle = atan2(1, diff * 3/5 * `dist' / 1600)  * (-180 / _pi)
+gen angle = atan2(1, diff * 3/5 * `dist' / 4000)  * (-180 / _pi)
 
 
 // sort the stringency stuff
@@ -112,40 +112,40 @@ replace `x' = 2 		if `x'==4
 
 
 
-gen c1 = 600
-gen c2 = 700
-gen c3 = 800
-gen c4 = 900
-gen c5 = 1000
-gen c6 = 1100
-gen c7 = 1200
-gen c8 = 1300
-gen c9 = 1400
+gen c1 = 1000
+gen c2 = 1250
+gen c3 = 1500
+gen c4 = 1750
+gen c5 = 2000
+gen c6 = 2250
+gen c7 = 2500
+gen c8 = 2750
+gen c9 = 3000
 
 summ date 
 gen xmarker = 21895 in 1/9   // dont change this
 
 gen ymarker = .
-replace ymarker = 600 in 1
-replace ymarker = 700 in 2
-replace ymarker = 800 in 3 
-replace ymarker = 900 in 4
-replace ymarker = 1000 in 5
-replace ymarker = 1100 in 6 
-replace ymarker = 1200 in 7 
-replace ymarker = 1300 in 8 
-replace ymarker = 1400 in 9 
+replace ymarker = 1000 in 1
+replace ymarker = 1250 in 2
+replace ymarker = 1500 in 3 
+replace ymarker = 1750 in 4
+replace ymarker = 2000 in 5
+replace ymarker = 2250 in 6 
+replace ymarker = 2500 in 7 
+replace ymarker = 2750 in 8 
+replace ymarker = 3000 in 9 
 
 gen pmarker = "" 
-replace pmarker = "Schools closed" 	  				if ymarker==600
-replace pmarker = "Work place closed" 				if ymarker==700 
-replace pmarker = "Limit public events" 			if ymarker==800
-replace pmarker = "Restrict gatherings" 			if ymarker==900
-replace pmarker = "Restrict public transport" 		if ymarker==1000
-replace pmarker = "Stay at home" 					if ymarker==1100
-replace pmarker = "Restrict internal movement" 		if ymarker==1200
-replace pmarker = "Restrict international travel" 	if ymarker==1300
-replace pmarker = "Masks" 							if ymarker==1400
+replace pmarker = "Schools closed" 	  				if ymarker==1000
+replace pmarker = "Work place closed" 				if ymarker==1250 
+replace pmarker = "Limit public events" 			if ymarker==1500
+replace pmarker = "Restrict gatherings" 			if ymarker==1750
+replace pmarker = "Restrict public transport" 		if ymarker==2000
+replace pmarker = "Stay at home" 					if ymarker==2250
+replace pmarker = "Restrict internal movement" 		if ymarker==2500
+replace pmarker = "Restrict international travel" 	if ymarker==2750
+replace pmarker = "Masks" 							if ymarker==3000
 
 
 gen label = BDL + "  (" + string(cases_daily, "%9.0f") + ")" // if tag_BDL==1
@@ -187,15 +187,15 @@ twoway ///
 	(line cases_ma_smooth date if rank==7 & date, lc("`r(p3)'") lw(thin)) ///
 	(line cases_ma_smooth date if rank==8 & date, lc("`r(p2)'") lw(thin)) ///
 	(line cases_ma_smooth date if rank==9 & date, lc("`r(p1)'") lw(thin) lp(solid)) ///
-		(scatter cases_ma_smooth date if rank==1 & date==`today', msangle(`angle1') mcolor("`r(p9)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.6)) ///
-		(scatter cases_ma_smooth date if rank==2 & date==`today', msangle(`angle2') mcolor("`r(p8)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.6)) ///
-		(scatter cases_ma_smooth date if rank==3 & date==`today', msangle(`angle3') mcolor("`r(p7)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.6)) ///
-		(scatter cases_ma_smooth date if rank==4 & date==`today', msangle(`angle4') mcolor("`r(p6)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.6)) ///
-		(scatter cases_ma_smooth date if rank==5 & date==`today', msangle(`angle5') mcolor("`r(p5)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.6)) ///
-		(scatter cases_ma_smooth date if rank==6 & date==`today', msangle(`angle6') mcolor("`r(p4)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.6)) ///
-		(scatter cases_ma_smooth date if rank==7 & date==`today', msangle(`angle7') mcolor("`r(p3)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.6)) ///
-		(scatter cases_ma_smooth date if rank==8 & date==`today', msangle(`angle8') mcolor("`r(p2)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.6)) ///
-		(scatter cases_ma_smooth date if rank==9 & date==`today', msangle(`angle9') mcolor("`r(p1)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.6)) ///
+		(scatter cases_ma_smooth date if rank==1 & date==`today', msangle(`angle1') mcolor("`r(p9)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.8)) ///
+		(scatter cases_ma_smooth date if rank==2 & date==`today', msangle(`angle2') mcolor("`r(p8)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.8)) ///
+		(scatter cases_ma_smooth date if rank==3 & date==`today', msangle(`angle3') mcolor("`r(p7)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.8)) ///
+		(scatter cases_ma_smooth date if rank==4 & date==`today', msangle(`angle4') mcolor("`r(p6)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.8)) ///
+		(scatter cases_ma_smooth date if rank==5 & date==`today', msangle(`angle5') mcolor("`r(p5)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.8)) ///
+		(scatter cases_ma_smooth date if rank==6 & date==`today', msangle(`angle6') mcolor("`r(p4)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.8)) ///
+		(scatter cases_ma_smooth date if rank==7 & date==`today', msangle(`angle7') mcolor("`r(p3)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.8)) ///
+		(scatter cases_ma_smooth date if rank==8 & date==`today', msangle(`angle8') mcolor("`r(p2)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.8)) ///
+		(scatter cases_ma_smooth date if rank==9 & date==`today', msangle(`angle9') mcolor("`r(p1)'") msymbol(arrow) msize(medium) mlabel(label) mlabcolor(black) mlabsize(*0.8)) ///
 			(scatter c1 date [aweight = c1_schoolclosing]					if tag==1, mcolor("gs8%10")  mlwidth(none)	msize(tiny) msymbol(smcircle)) ///
 			(scatter c2 date [aweight = c2_workplaceclosing]				if tag==1, mcolor("gs8%10")  mlwidth(none)	msize(tiny) msymbol(smcircle)) ///
 			(scatter c3 date [aweight = c3_cancelpublicevents]				if tag==1, mcolor("gs8%10")  mlwidth(none)	msize(tiny) msymbol(smcircle)) ///
@@ -205,12 +205,12 @@ twoway ///
 			(scatter c7 date [aweight = c7_restrictionsoninternalmovemen]	if tag==1, mcolor("gs8%10")  mlwidth(none)	msize(tiny) msymbol(smcircle)) ///
 			(scatter c8 date [aweight = c8_internationaltravelcontrols]		if tag==1, mcolor("gs8%10")  mlwidth(none)	msize(tiny) msymbol(smcircle)) ///	
 			(scatter c9 date [aweight = h6_facialcoverings]					if tag==1, mcolor("gs8%10")  mlwidth(none)	msize(tiny) msymbol(smcircle)) ///	
-			(scatter ymarker xmarker, mcolor(black) msymbol(none) mlabel(pmarker) mlabsize(*0.65) mlabcolor(black) mlabposition(3) mlabgap()) ///
+			(scatter ymarker xmarker, mcolor(black) msymbol(none) mlabel(pmarker) mlabsize(*0.9) mlabcolor(black) mlabposition(3) mlabgap()) ///
 			, ///
 			xtitle("") ///
 			ytitle("New cases (3-day moving average)" , size(small)) ///
-				xlabel(`x1'(30)`x2', labsize(vsmall) angle(vertical) glwidth(vvthin) glpattern(solid)) ///
-				ylabel(0(200)1600, labsize(vsmall) glwidth(vvthin) glpattern(solid)) ///
+				xlabel(`x1'(45)`x2', labsize(vsmall) angle(vertical) glwidth(vvthin) glpattern(solid)) ///
+				ylabel(0(500)4000, labsize(vsmall) glwidth(vvthin) glpattern(solid)) ///
 		title("{fontface Arial Bold:COVID-19 cases for Austria: `casestoday' on `date'}", size(medlarge)) ///
 		note("Data: https://covid19-dashboard.ages.at/. Policy Stringency Data: Oxford COVID-19 Government Response Tracker. Strength of policy is indicated by marker size. Cases for the last reported date for each province given in brackets.", size(*0.6)) ///
 		legend(off) 	xsize(2) ysize(1)
