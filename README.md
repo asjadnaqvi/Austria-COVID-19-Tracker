@@ -123,6 +123,8 @@ By December 2020, information was fairly standardized, and the biggest concern w
 
 Here are several websites in Austria that collate data or display their own projects:
 
+Really nice dashboard by [Paul Kleinrath](https://twitter.com/pklein82): https://www.covid2019.at/
+
 [Bundesministerium für Bildung, Wissenschaft und Forschung (BMBWF)](https://www.bmbwf.gv.at/)
 
 [Austrian Corona Panel Project (ACPP)](https://viecer.univie.ac.at/coronapanel/)
