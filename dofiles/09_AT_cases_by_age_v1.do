@@ -3,7 +3,8 @@ clear
 
 // install the schemes and packages
 *ssc install colorpalette, replace
-*net install tsg_schemes, from("https://raw.githubusercontent.com/asjadnaqvi/Stata-schemes/main/schemes/") replace
+*ssc install schemepack, replace
+
 set scheme white_tableau
 graph set window fontface "Arial Narrow"
 
@@ -67,7 +68,7 @@ local xmin = `r(min)'
 local xmax = `r(max)'	
 
 heatplot cases_daily_per100k i.agegrp date if province=="Österreich", ///
-	levels(20) color(viridis, reverse) xbins(100) p(lalign(center)) ///  // p(lc(black) lalign(center) lw(0.01))
+	levels(20) color(viridis, reverse) xbins(180) p(lalign(center)) ///  // p(lc(black) lalign(center) lw(0.01))
 	xtitle("") /// 
 	ramp(bottom length(80) space(8) subtitle("")) ///
 	xlabel(`xmin'(30)`xmax', labsize(2) angle(vertical) format(%tdDD-Mon-yy) nogrid) ///
@@ -82,7 +83,7 @@ local xmin = `r(min)'
 local xmax = `r(max)'	
 
 heatplot cases_daily_ma_per100k i.agegrp date if province=="Österreich", ///
-	levels(20) color(viridis, reverse) xbins(100) p(lalign(center)) ///  // p(lc(black) lalign(center) lw(0.01))
+	levels(20) color(viridis, reverse) xbins(180) p(lalign(center)) ///  // p(lc(black) lalign(center) lw(0.01))
 	xtitle("") /// 
 	ramp(bottom length(80) space(8) subtitle("")) ///
 	xlabel(`xmin'(30)`xmax', labsize(2) angle(vertical) format(%tdDD-Mon-yy) nogrid) ///
@@ -144,7 +145,7 @@ local xmax = `r(max)'
 
 
 heatplot ratioFM_ma i.agegrp date if province=="Österreich", ///
-	cuts(0(0.1)2) xbins(100) color(hsv purplegreen, reverse) p(lc(white) lw(0.06))  /// // 
+	cuts(0(0.1)2) xbins(120) color(hsv purplegreen, reverse) p(lc(white) lw(0.06))  /// // 
 	xtitle("") /// 
 	ramp(bottom length(80) space(10) subtitle("") label(0 "Twice more men" 1 "Equal" 2 "Twice more women"))  ///
 	xlabel(`xmin'(30)`xmax', labsize(2) angle(vertical) format(%tdDD-Mon-yy) nogrid) ///

@@ -23,11 +23,11 @@ insheet using "https://storage.googleapis.com/covid19-open-data/v2/index.csv", c
 
 ***** 08 mobility. Heavy file. Update infrequently.
 
-/*
-insheet using "https://storage.googleapis.com/covid19-open-data/v2/mobility.csv", clear 
+
+import delim using "https://storage.googleapis.com/covid19-open-data/v2/mobility.csv", clear 
 compress
 save ./temp/08_mobility.dta, replace
-*/
+
 }
 
 *** set up the data
