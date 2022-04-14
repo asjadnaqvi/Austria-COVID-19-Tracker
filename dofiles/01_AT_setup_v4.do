@@ -65,6 +65,15 @@ order BDL BDL_id bezirk id date
 compress
 save "master/austria_covid19.dta", replace
 
+bysort bezirk: gen cases60  = cases - cases[_n-60]
+bysort bezirk: gen deaths60 = deaths - deaths[_n-60]
+
+summ date
+keep if date==`r(max)'
+
+compress
+save "master/austria_covid19_last.dta", replace
+
 **** cases by age group here
 
 

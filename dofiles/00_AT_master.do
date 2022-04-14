@@ -26,7 +26,7 @@ do "./dofiles/04_AT_hospitalization_v2.do"
 do "./dofiles/05_AT_maps_BZ_v5.do"
 do "./dofiles/06_AT setup_scrape_v1.do"
 do "./dofiles/07_AT_incidence_by_vacc_agegrp_v1.do"
-do "./dofiles/08_AT_vaccination_maps_v2.do"
+do "./dofiles/08_AT_vaccination_maps_v3.do"
 do "./dofiles/09_AT_cases_by_age_v1.do"
 
 
